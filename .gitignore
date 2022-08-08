@@ -1,0 +1,8 @@
+.DS_Store
+bin
+*.a
+*.o
+.vscode
+cub3D
+minilibx
+.minilibx
