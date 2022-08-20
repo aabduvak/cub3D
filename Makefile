@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aabduvak <aabduvak@student.42.fr>          +#+  +:+       +#+         #
+#    By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/15 16:23:46 by aabduvak          #+#    #+#              #
-#    Updated: 2022/08/08 08:33:02 by aabduvak         ###   ########.fr        #
+#    Updated: 2022/08/20 04:32:26 by aabduvak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ END				=	"\033[0;0m"
 SRCS			= $(shell find sources -type f -name "*.c")
 OBJS			= $(SRCS:sources/%.c=sources/bin/%.o)
 ROOT			= $(shell echo $(HOME))
-LOG				= output.file
 
 # Command and Flags
 
@@ -47,6 +46,20 @@ INC				= ./includes/
 BIN				= ./sources/bin/
 LIB				= ./lib/.$(NAME)
 
+# Operating System
+
+GET_OS := $(shell uname -s)
+
+ifeq ($(GET_OS), Darwin)
+	OS			= MACOS
+	FRAMEWORK	= -framework OpenGL -framework AppKit
+	LFLAGS		= -I./includes
+else
+	OS			= LINUX
+	FRAMEWORK	= -L./lib/minilibx -l./lib/minilibx -L/usr/lib -I./lib/minilibx -lXext -lX11 -lm -lz
+	LFLAGS		= -I/usr/include -O3	
+endif
+
 # Rules
 
 all : $(LIB) $(LIBFT) $(NAME)
@@ -63,11 +76,11 @@ $(BIN):
 $(BIN)%.o: sources/%.c
 	@mkdir -p $(shell dirname $@)
 	@echo $(YELLOW) "Compiling..." $< $(END)
-	@$(CC) $(CFLAGS) -c $< -o $@ -I$(INC_PR) -I$(INC_GN) -I$(INC_FT) -I$(INC)
+	@$(CC) $(CFLAGS) $(LFLAGS) -c $< -o $@ -I$(INC_PR) -I$(INC_GN) -I$(INC_FT) -I$(INC)
 
 $(NAME): $(BIN) $(OBJS)
 	@echo $(YELLOW) "Building... $(NAME)" $(END)
-	@$(CC) $(OBJS) $(LDFLAGS) -o $(NAME) $(LIBFT)
+	@$(CC) $(OBJS) $(FRAMEWORK) -o $(NAME) $(LIBFT)
 	@echo $(GREEN) "$(NAME) created successfully!\n" $(END)
 
 # $< input files
