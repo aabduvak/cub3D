@@ -1,8 +1,8 @@
 
-NO ./assets/BOOKS.xpm
-SO ./assets/WALL.xpm
-WE ./assets/WALL.xpm
-EA ./assets/WALL.xpm
+NO ./assets/wall_no.xpm
+SO ./assets/wall_so.xpm
+WE ./assets/wall_we.xpm
+EA ./assets/wall_ea.xpm
 
 F 75,186,-55
 C 77,159,240

@@ -1,8 +1,8 @@
 
-NO ./assets/WALL.xpm
-SO ./assets/WALL.xpm
+NO ./assets/wall_no.xpm
+SO ./assets/wall_so.xpm
 WE ./assets/WALLIOYFAGYGAFUYGAFIUGYAIUFIUAGYFIU.xpm
-EA ./assets/WALL.xpm
+EA ./assets/wall_ea.xpm
 
 F 10,10,10
 C 10,10,10

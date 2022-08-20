@@ -1,12 +1,12 @@
 
-NO ./assets/BOOKS.xpm
-SO ./assets/WALL.xpm
+NO ./assets/wall_no.xpm
+SO ./assets/wall_so.xpm
 
 F 75,186,0
 C 77,159,240
 
-WE ./assets/WALL.xpm
-EA ./assets/WALL.xpm
+WE ./assets/wall_we.xpm
+EA ./assets/wall_ea.xpm
 
 111111111111111111111111111111
 100000000000000010000000000001

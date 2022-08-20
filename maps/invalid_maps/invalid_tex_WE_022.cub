@@ -1,12 +1,12 @@
 
-WE ./assets/WALL.xpm
-SO ./assets/WALL.xpm
-EA ./assets/WALL.xpm
-NO ./assets/WALL.xpm
+WE ./assets/wall_we.xpm
+SO ./assets/wall_so.xpm
+EA ./assets/wall_ea.xpm
+NO ./assets/wall_no.xpm
 
 C 255,100,160
 F 122,122,122
-WE ./assets/WALL.xpm
+WE ./assets/wall_we.xpm
 
 11111111111111111
 10000000000000001
