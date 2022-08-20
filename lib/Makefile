@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aabduvak <aabduvak@student.42.fr>          +#+  +:+       +#+         #
+#    By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 07:59:14 by aabduvak          #+#    #+#              #
-#    Updated: 2022/08/08 08:24:55 by aabduvak         ###   ########.fr        #
+#    Updated: 2022/08/20 00:25:39 by aabduvak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,20 @@ WHITE			=	"\033[0;37m"
 END				=	"\033[0;0m"
 
 # Files
+
+GET_OS := $(shell uname -s)
+
+ifeq ($(GET_OS), Darwin)
+	OS			=		MACOS
+	LINK		=		https://projects.intra.42.fr/uploads/document/document/9232/minilibx_opengl.tgz
+	ARCHIEVE	=		minilibx_opengl.tgz
+	FOLDER		=		minilibx_opengl_20191021
+else
+	OS			=		LINUX
+	LINK		=		https://projects.intra.42.fr/uploads/document/document/9225/minilibx-linux.tgz
+	ARCHIEVE	=		minilibx-linux.tgz
+	FOLDER		=		minilibx-linux
+endif
 
 DIR				= $(shell echo $(PWD))
 RM				= rm -rf
@@ -43,9 +57,9 @@ fclean :
 re : fclean all
 
 $(LIB):
-	@curl -O https://projects.intra.42.fr/uploads/document/document/9232/minilibx_opengl.tgz
-	@gunzip -c $(NAME)_opengl.tgz | tar xopf -
-	@mv $(NAME)_opengl_20191021 $(NAME)
+	@curl -O $(LINK)
+	@gunzip -c $(ARCHIEVE) | tar xopf -
+	@mv $(FOLDER) $(NAME)
 	make -C $(NAME)
 	@$(RM) *.tgz
 	@mkdir $(LIB)
