@@ -1,0 +1,8 @@
+
+NO ./assets/wall_no.xpm
+SO ./assets/wall_so.xpm
+EA ./assets/wall_ea.xpm
+WE ./assets/wall_we.xpm
+
+C 255,100,160
+F 122,122,122
