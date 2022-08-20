@@ -6,7 +6,7 @@
 #    By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/15 16:23:46 by aabduvak          #+#    #+#              #
-#    Updated: 2022/08/20 04:32:26 by aabduvak         ###   ########.fr        #
+#    Updated: 2022/08/20 11:54:07 by aabduvak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ END				=	"\033[0;0m"
 
 SRCS			= $(shell find sources -type f -name "*.c")
 OBJS			= $(SRCS:sources/%.c=sources/bin/%.o)
-ROOT			= $(shell echo $(HOME))
 
 # Command and Flags
 
@@ -80,7 +79,7 @@ $(BIN)%.o: sources/%.c
 
 $(NAME): $(BIN) $(OBJS)
 	@echo $(YELLOW) "Building... $(NAME)" $(END)
-	@$(CC) $(OBJS) $(FRAMEWORK) -o $(NAME) $(LIBFT)
+	@$(CC) $(OBJS) $(FRAMEWORK) -o $(NAME) $(LIBFT) $(MINILIBX)
 	@echo $(GREEN) "$(NAME) created successfully!\n" $(END)
 
 # $< input files
