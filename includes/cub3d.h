@@ -6,7 +6,7 @@
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 07:51:17 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/20 04:05:22 by aabduvak         ###   ########.fr       */
+/*   Updated: 2022/08/22 17:21:21 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <sys/wait.h>
+# include <math.h>
 
 # include <../lib/minilibx/mlx.h>
 
@@ -29,5 +30,7 @@
 # include <macro.h>
 # include <data_structure.h>
 # include <functions.h>
+# include <init_data.h>
+# include <render.h>
 
 #endif
