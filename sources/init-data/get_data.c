@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions.h                                        :+:      :+:    :+:   */
+/*   get_data.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/20 04:04:27 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 13:59:21 by aabduvak         ###   ########.fr       */
+/*   Created: 2022/08/22 12:50:27 by aabduvak          #+#    #+#             */
+/*   Updated: 2022/08/22 13:53:12 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNCTIONS_H
-# define FUNCTIONS_H
+#include <cub3d.h>
 
-// INIT DATA
-void	get_map(t_data *data, char **line);
-void	get_args(t_data *data, t_map *map);
-int		get_data(t_data *data, t_map *map);
-
-#endif
+int	get_data(t_data *data, t_map *map)
+{
+	if (!data || !map)
+		return (1);
+	get_file_args(map, data);
+	get_map(data, map->data);
+	return (0);
+}
