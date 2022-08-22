@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   clear_map.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/08 07:51:17 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 21:04:44 by aabduvak         ###   ########.fr       */
+/*   Created: 2022/08/22 20:59:43 by aabduvak          #+#    #+#             */
+/*   Updated: 2022/08/22 21:04:00 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CLEAR_MAP_H
+# define CLEAR_MAP_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include <stdbool.h>
-# include <stdio.h>
-# include <fcntl.h>
-# include <sys/wait.h>
-# include <math.h>
-
-# include <../lib/minilibx/mlx.h>
-
-# include <libft.h>
-# include <ft_printf.h>
-# include <get_next_line.h>
-# include <macro.h>
 # include <data_structure.h>
-# include <functions.h>
-# include <init_data.h>
-# include <render.h>
-# include <clear_map.h>
+
+int	clear_map(t_map *map);
 
 #endif
