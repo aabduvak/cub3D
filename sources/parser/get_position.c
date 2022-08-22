@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.h                                           :+:      :+:    :+:   */
+/*   get_position.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 22:02:52 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/23 00:29:36 by aabduvak         ###   ########.fr       */
+/*   Created: 2022/08/23 00:27:08 by aabduvak          #+#    #+#             */
+/*   Updated: 2022/08/23 00:29:01 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSER_H
-# define PARSER_H
+#include <cub3d.h>
 
-t_map	*create_map(char *filename);
-t_map	*init_map(int fd);
-int		get_map_fd(t_map *map, int fd);
-int		get_param(t_map *map, int fd, char *s);
-int		check_wall(t_map *map, char ch);
-int		check_map(t_map *map, char *s, char *s2);
-void	get_position(t_map *map);
+void	get_position(t_map *map)
+{
+	int		i;
+	int		k;
+	int		t;
 
-#endif
+	t = 0;
+	i = -1;
+	while (map->data[++i])
+	{
+		k = -1;
+		while (map->data[i][++k])
+		{
+			if (ft_strchr("WESN", map->data[i][k]))
+			{
+				while (map->data[i][k] != "ENWS"[t])
+					t++;
+				map->ang = t * 90;
+				map->data[i][k] = '0';
+				map->y = i;
+				map->x = k;
+				return ;
+			}
+		}
+	}
+}
