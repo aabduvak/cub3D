@@ -6,7 +6,7 @@
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 07:51:17 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 21:18:10 by aabduvak         ###   ########.fr       */
+/*   Updated: 2022/08/22 22:07:33 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@
 # include <render.h>
 # include <clear_map.h>
 # include <events.h>
+# include <tools.h>
+# include <parser.h>
 
 #endif
