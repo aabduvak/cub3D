@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_data.c                                         :+:      :+:    :+:   */
+/*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 12:50:27 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 17:23:39 by aabduvak         ###   ########.fr       */
+/*   Created: 2022/08/22 17:03:08 by aabduvak          #+#    #+#             */
+/*   Updated: 2022/08/22 17:42:38 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-int	get_data(t_data *data, t_map *map)
+void	raycast(t_data *data, float angle, int pixels)
 {
-	if (!data || !map)
-		return (1);
-	get_args(data, map);
-	get_map(data, map->data);
-	return (0);
+	float		cos_value;
+	float		sin_value;
+	t_player	dir;
+
+	cos_value = cosf(angle + data->look);
+	sin_value = sinf(angle + data->look);
+	dir.x = (cos_value > 0) * 2 - 1;
+	dir.y = (sin_value > 0) * 2 - 1;
+	dir.angle = angle;
+	look_slope(data, sin_value / cos_value, &dir, pixels);
 }

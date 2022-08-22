@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_data.c                                         :+:      :+:    :+:   */
+/*   init_data.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 12:50:27 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 17:23:39 by aabduvak         ###   ########.fr       */
+/*   Created: 2022/08/22 17:19:35 by aabduvak          #+#    #+#             */
+/*   Updated: 2022/08/22 17:23:59 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cub3d.h>
+#ifndef INIT_DATA_H
+# define INIT_DATA_H
 
-int	get_data(t_data *data, t_map *map)
-{
-	if (!data || !map)
-		return (1);
-	get_args(data, map);
-	get_map(data, map->data);
-	return (0);
-}
+# include <data_structure.h>
+
+void	get_map(t_data *data, char **line);
+void	get_args(t_data *data, t_map *map);
+int		get_data(t_data *data, t_map *map);
+
+#endif

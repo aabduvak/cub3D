@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_data.c                                         :+:      :+:    :+:   */
+/*   fill_screen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 12:50:27 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 17:23:39 by aabduvak         ###   ########.fr       */
+/*   Created: 2022/08/22 16:55:34 by aabduvak          #+#    #+#             */
+/*   Updated: 2022/08/22 17:39:23 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-int	get_data(t_data *data, t_map *map)
+void	fill_screen(t_data *data)
 {
-	if (!data || !map)
-		return (1);
-	get_args(data, map);
-	get_map(data, map->data);
-	return (0);
+	int		x;
+	int		y;
+	int		middle;
+
+	middle = data->screen.height / 2;
+	y = -1;
+	while (++y < middle)
+	{
+		x = -1;
+		while (++x < data->screen.width)
+			image_put_pixel(&data->screen, x, y, data->ceil_color);
+	}
+	while (++y < data->screen.height)
+	{
+		x = -1;
+		while (++x < data->screen.width)
+			image_put_pixel(&data->screen, x, y, data->floor_color);
+	}
 }

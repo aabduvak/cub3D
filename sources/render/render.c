@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_data.c                                         :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 12:50:27 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 17:23:39 by aabduvak         ###   ########.fr       */
+/*   Created: 2022/08/22 16:51:17 by aabduvak          #+#    #+#             */
+/*   Updated: 2022/08/22 17:29:09 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-int	get_data(t_data *data, t_map *map)
+void	render(t_data *data)
 {
-	if (!data || !map)
-		return (1);
-	get_args(data, map);
-	get_map(data, map->data);
-	return (0);
+	const float	view_angle = 1.5f / 2;
+	const float	add = view_angle / WIN_WIDTH;
+	float		angle;
+	int			pixels;
+
+	fill_screen(data);
+	pixels = WIN_WIDTH;
+	angle = -(view_angle / 2);
+	while (pixels--)
+	{
+		raycast(data, angle, pixels);
+		angle += add;
+	}
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->screen.img, 0, 0);
 }
