@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macro.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabduvak <aabduvak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 07:52:58 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/08 07:53:52 by aabduvak         ###   ########.fr       */
+/*   Updated: 2022/08/22 12:24:38 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,11 @@
 # define BOLD_BLUE		"\033[1;34m"
 # define BOLD_WHITE		"\033[1;37m"
 # define RESET			"\033[0;0m"
+
+# define WIN_WIDTH 1920
+# define WIN_HEIGHT 1080
+
+# define PI 3.14159f
+# define ANLE_TO_RADIAN 0.0174532f
 
 #endif
