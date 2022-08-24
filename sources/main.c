@@ -6,13 +6,21 @@
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 07:38:51 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 22:48:08 by aabduvak         ###   ########.fr       */
+/*   Updated: 2022/08/24 04:49:31 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3d.h>
 
-/*int	main(int argc, char **argv)
+void	start_game(t_data *data, t_map *map)
+{
+	data->pos.x = map->x + 0.5f;
+	data->pos.y = map->y + 0.5f;
+	data->look = (map->ang + 180) * ANLE_TO_RADIAN;
+	render(data);
+}
+
+int	main(int argc, char **argv)
 {
 	t_data	data;
 	t_map	*map;
@@ -31,11 +39,8 @@
 	data.screen.addr = mlx_get_data_addr(data.screen.img,
 			&data.screen.bbp, &data.screen.line_len, &data.screen.endian);
 	get_data(&data, map);
-	return (0);
-}
-*/
-
-int	main(void)
-{
+	start_game(&data, map);
+	event_handler(&data);
+	mlx_loop(data.mlx);
 	return (0);
 }

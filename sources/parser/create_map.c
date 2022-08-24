@@ -6,7 +6,7 @@
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 21:50:07 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/23 00:26:32 by aabduvak         ###   ########.fr       */
+/*   Updated: 2022/08/24 04:49:43 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	format_checker(char *filename)
 {
-	int	len;
+	int		len;
 	char	*extension;
 
 	len = ft_strlen(filename);

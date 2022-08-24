@@ -6,7 +6,7 @@
 /*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 22:58:04 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 23:51:05 by aabduvak         ###   ########.fr       */
+/*   Updated: 2022/08/24 04:50:06 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	get_map_fd(t_map *map, int fd)
 	char	*s;
 	char	*tmp;
 
-	tmp = NULL;
-	s = NULL;
+	tmp = ft_strdup("");
+	s = ft_strdup("");
 	while (!s)
 		if (-1 == get_line(fd, &s, 0))
 			return (-1);
@@ -40,4 +40,3 @@ int	get_map_fd(t_map *map, int fd)
 	free(tmp);
 	return (0);
 }
-
