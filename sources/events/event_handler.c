@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+        */
+/*   By: aabduvak <aabduvak@42ISTANBUL.COM.TR>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 21:14:08 by aabduvak          #+#    #+#             */
-/*   Updated: 2022/08/22 21:35:27 by aabduvak         ###   ########.fr       */
+/*   Updated: 2022/08/27 02:56:58 by aabduvak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

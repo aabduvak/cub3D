@@ -26,10 +26,10 @@ int	main(int argc, char **argv)
 	t_map	*map;
 
 	if (argc != 2)
-		return (-1);
+		return (1);
 	map = create_map(argv[1]);
 	if (map == NULL)
-		return (-1);
+		return (1);
 	data.mlx = mlx_init();
 	data.mlx_win = mlx_new_window(data.mlx,
 			WIN_WIDTH, WIN_HEIGHT, "GTA Vice City");

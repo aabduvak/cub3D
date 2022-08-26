@@ -18,7 +18,7 @@ int	get_map_fd(t_map *map, int fd)
 	char	*tmp;
 
 	tmp = ft_strdup("");
-	s = ft_strdup("");
+	s = NULL;
 	while (!s)
 		if (-1 == get_line(fd, &s, 0))
 			return (-1);
