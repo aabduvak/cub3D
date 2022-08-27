@@ -4,7 +4,7 @@ SO ./assets/wall_so.xpm
 WE ./assets/wall_we.xpm
 EA ./assets/wall_ea.xpm
 
-F 75,186,0
+F 98,70,33
 C 77,159,240
 C 77,159,240
 

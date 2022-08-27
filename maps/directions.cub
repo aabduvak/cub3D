@@ -4,7 +4,7 @@ SO ./assets/south.xpm
 WE ./assets/west.xpm
 EA ./assets/east.xpm
 
-F 75,186,0
+F 98,70,33
 C 77,159,240
 
 111111111111111111111111111111

@@ -1,7 +1,7 @@
-NO ./images/wall_no.xpm
-SO ./images/wall_so.xpm
-WE ./images/wall_we.xpm
-EA ./images/wall_ea.xpm
+NO ./assets/kidding/wall_no.xpm
+SO ./assets/kidding/wall_so.xpm
+WE ./assets/kidding/wall_we.xpm
+EA ./assets/kidding/wall_ea.xpm
 
 F 98,70,33
 C 180,225,231
