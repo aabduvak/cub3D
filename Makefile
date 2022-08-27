@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aabduvak <aabduvak@42istanbul.com.tr>      +#+  +:+       +#+         #
+#    By: aabduvak <aabduvak@42ISTANBUL.COM.TR>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/15 16:23:46 by aabduvak          #+#    #+#              #
-#    Updated: 2022/08/20 11:54:07 by aabduvak         ###   ########.fr        #
+#    Updated: 2022/08/27 04:47:16 by aabduvak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,7 +111,10 @@ norm :
 re : ffclean all
 
 run : $(NAME)
-	@./$(NAME)
+	@./$(NAME) game.cub
+
+test :
+	@./maps/map_test.sh
 
 help :
 	@echo "------------------------------------ <<HELP COMMAND>> ------------------------------------"
