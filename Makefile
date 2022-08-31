@@ -55,7 +55,7 @@ ifeq ($(GET_OS), Darwin)
 	LFLAGS		= -I./includes
 else
 	OS			= LINUX
-	FRAMEWORK       = -Lminilibx -L/usr/lib -I./lib/minilibx -lmlx -lz -lm -lX11 -lXext
+	FRAMEWORK       = -L./lib/minilibx -L/usr/lib -I./lib/minilibx -lmlx -lz -lm -lX11 -lXext
 	LFLAGS		= -I/usr/include -O3	
 endif
 
