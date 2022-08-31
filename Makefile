@@ -33,7 +33,6 @@ CC				= gcc
 RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror
 LIBFT			= ./libft/libft.a
-MINILIBX		= ./lib/minilibx/libmlx.a
 
 # Directories
 
@@ -53,10 +52,12 @@ ifeq ($(GET_OS), Darwin)
 	OS			= MACOS
 	FRAMEWORK	= -framework OpenGL -framework AppKit
 	LFLAGS		= -I./includes
+	MINILIBX		= ./lib/minilibx/libmlx.a
 else
 	OS			= LINUX
-	FRAMEWORK	= -L./lib/minilibx -l./lib/minilibx -L/usr/lib -I./lib/minilibx -lXext -lX11 -lm -lz
-	LFLAGS		= -I/usr/include -O3	
+	FRAMEWORK       = -L./lib/minilibx -L/usr/lib -I./lib/minilibx -lmlx -lz -lm -lX11 -lXext
+	LFLAGS		= -I/usr/include -O3
+	MINILIBX		= ./lib/minilibx/libmlx_Linux.a
 endif
 
 # Rules
